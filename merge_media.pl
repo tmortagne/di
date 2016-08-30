@@ -30,7 +30,6 @@ my $SLACK_USERNAME = $config->param( 'SLACK_USERNAME' );
 my $SLACK_ICON_EMOJI = $config->param( 'SLACK_ICON_EMOJI' );
 
 my $REGEX_PATH_ROOT = quotemeta $PATH_ROOT;
-my $REGEX_WEB_ROOT = quotemeta $WEB_ROOT;
 
 # Create HTTP "client"
 my $ua = LWP::UserAgent->new;
@@ -101,7 +100,7 @@ if (length($messageTotal) > 0) {
   {
     channel => $SLACK_CHANNEL,
     username => $SLACK_USERNAME,
-    icon_emoji => $SLACK_USERNAME,
+    icon_emoji => $SLACK_ICON_EMOJI,
     text => $messageTotal
   };
 
@@ -143,7 +142,7 @@ sub move_media
 
             if (!exists($ignored{$ext})) {
               my $targetURL = $target;
-              $targetURL =~ s/$REGEX_PATH_ROOT/$REGEX_WEB_ROOT/g;
+              $targetURL =~ s/$REGEX_PATH_ROOT/$WEB_ROOT/g;
               $targetURL =~ s/%/%25/g;
               $targetURL =~ s/ /%20/g;
 

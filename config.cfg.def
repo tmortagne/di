@@ -5,10 +5,10 @@ MEDIA_ROOT = /my/root/folder/media
 USERS_ROOT = /my/root/folder/users
 
 # Web
-WEB_ROOT = https://mydomain/ftproot/
+WEB_ROOT = https://mydomain/ftproot
 
 # Slack
 SLACK_URL = https://hooks.slack.com/services/T65A2Z99T/R545544A/edz5edOPOPO8
 SLACK_CHANNEL = #notifications
 SLACK_USERNAME = Mybot
-SLACK_ICON_EMOJI= :ghost
+SLACK_ICON_EMOJI= :ghost:
